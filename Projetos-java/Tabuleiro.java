@@ -10,11 +10,7 @@ public class Tabuleiro extends Tabuleiro_base implements TabUi{
     
     public Tabuleiro(Jogador p1, Jogador p2){ //construtor
         super(p1, p2);
-
-        for (int i = 0; i < 5; i++) {
-            System.out.println(" \n");// apenas para puar linhas 
-        }  
-        //reiniciarTabuleiro();// adiciona os asteriscos no tabuleiro 
+        reiniciarTabuleiro();// adiciona os asteriscos no tabuleiro 
         
         QmJoga=1;// inicializo com 1
         
@@ -22,14 +18,7 @@ public class Tabuleiro extends Tabuleiro_base implements TabUi{
     }
     @Override
     public void exibirTabuleiro() {
-        char[][] tabuleiro = getTabuleiro();
-        for (int i = 0; i < tabuleiro.length; i++) {
-            for (int j = 0; j < tabuleiro.length; j++) {
-                tabuleiro[i][j]='*';
-                System.out.print(tabuleiro[i][j]);
-            }
-            System.out.println();
-        }
+        char tabuleiro[][] = getTabuleiro();
         desenheTabuleiro(getTabuleiro());
        // desenho do tauleiro, sem necessidade, mas ele exibe o tabuleiro
     }
@@ -127,12 +116,8 @@ public class Tabuleiro extends Tabuleiro_base implements TabUi{
             return 'E';
         }
         
-        
-        
-        return '*';
-        
-            
-    }
+        return '*';     
+    }//não está sendo usado, mas vejo utilidade
     public boolean verificarEmpate(){
         if(verificarVencedor()!=jogadorAtual.getMarcador()){
             return true;
@@ -146,9 +131,9 @@ public class Tabuleiro extends Tabuleiro_base implements TabUi{
         for (int i = 0; i < tabuleiro.length; i++) {
             for (int j = 0; j < tabuleiro.length; j++) {
                 tabuleiro[i][j]='*';
-                System.out.print(tabuleiro[i][j]);
+                //System.out.print(tabuleiro[i][j]);
             }
-            System.out.println();
+            //System.out.println();
         }
        
     }

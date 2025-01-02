@@ -6,7 +6,7 @@ public class App {
         t1.exibirTabuleiro();
         t1.setIniciante(1);
         //System.out.println(t1.getJogador1());
-        //t1.jogar();
+        t1.jogar();
         //t1.exibirTabuleiro();
         switch (t1.verificarVencedor()) {
             case 'E' -> System.out.println("o jogo deu empate");
