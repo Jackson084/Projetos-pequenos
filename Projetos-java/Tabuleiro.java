@@ -3,19 +3,18 @@ public class Tabuleiro extends Tabuleiro_base implements TabUi{
     
     private int QmJoga=0;//criado para alternar os jogadores
     private Jogador jogadorAtual;// pra definir o jogador atual
-    private Jogador posterior;// para receber o oposto do atual
+    // para receber o oposto do atual
     private  int partidas;// para definir a quantidaades de partidas
     
 
     
     public Tabuleiro(Jogador p1, Jogador p2){ //construtor
         super(p1, p2);
-        char tabuleiro[][]=getTabuleiro();
 
         for (int i = 0; i < 5; i++) {
             System.out.println(" \n");// apenas para puar linhas 
         }  
-        reiniciarTabuleiro();// adiciona os asteriscos no tabuleiro 
+        //reiniciarTabuleiro();// adiciona os asteriscos no tabuleiro 
         
         QmJoga=1;// inicializo com 1
         
@@ -70,13 +69,14 @@ public class Tabuleiro extends Tabuleiro_base implements TabUi{
             tabuleiro[linha][coluna] = jogadorAtual.getMarcador(); // como
             //tabuleiro[jj.escolherLinha()][jj.escolherColuna()]=getJogador1(); eu fiz isso kkkk
              // Verificar vencedor
-             if (verificarVencedor() != '*') {
+            
+            if (verificarVencedor() != '*') {
                 exibirTabuleiro();
                 //System.out.println("Jogador " + QmJoga + " venceu!");
                 return true;
             }
             // Verificar empate
-             if (partidas == 8 ) {
+            if (partidas == 8 ) {
                 exibirTabuleiro();
                 //System.out.println("Empate!");
                 return false;
@@ -92,6 +92,7 @@ public class Tabuleiro extends Tabuleiro_base implements TabUi{
             } else {
                 jogadorAtual = getJogador2();
             }
+         
         }
         return false;
     }

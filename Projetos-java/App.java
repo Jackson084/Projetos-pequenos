@@ -9,17 +9,10 @@ public class App {
         //t1.jogar();
         //t1.exibirTabuleiro();
         switch (t1.verificarVencedor()) {
-            case 'E':
-                System.out.println("o jogo deu empate");
-                break;
-            case 'X':
-                System.out.println(" o Jogador X venceu");
-                break;
-            case 'O':
-                System.out.println(" o Jogador Bola venceu");
-                break;
-            default:
-                System.out.println(" ouve algum problema");
+            case 'E' -> System.out.println("o jogo deu empate");
+            case 'X' -> System.out.println(" o Jogador X venceu");
+            case 'O' -> System.out.println(" o Jogador Bola venceu");
+            default -> System.out.println(" ouve algum problema");
         }
     }
 }
